@@ -14,6 +14,13 @@ cd DjangoTest
 py manage.py startapp main
 cd ..
 
-To update database:
+To update (commit) database:
 py DjangoTest/manage.py migrate
+
+To stage database changes:
+py DjangoTest/manage.py makemigrations main
+
+Get into manual manager control:
+cd DjangoTest
+py manage.py shell
 
