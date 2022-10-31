@@ -32,3 +32,8 @@ py manage.py shell
 python manage.py createsuperuser John_admin
 http://127.0.0.1:8000/admin/
 
+
+
+
+-Better jinja-html add in settings.json:
+"files.associations": {"*.html": "jinja-html"}
