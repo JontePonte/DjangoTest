@@ -35,5 +35,8 @@ http://127.0.0.1:8000/admin/
 
 
 
--Better jinja-html add in settings.json:
+-Better jinja-html add in settings.json (makes html a bit worse...):
 "files.associations": {"*.html": "jinja-html"}
+-Fix annoying sql-error in pylint. In file .pylintrc:
+ignored-classes=SQLObject,Registrant,scoped_session
+P
