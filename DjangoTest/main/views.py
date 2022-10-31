@@ -5,8 +5,9 @@ from .models import ToDoList, Item
 
 
 
-def index(response, name):
-    ls = ToDoList.objects.get(name=name)
-    # item = ls.item_set.get(id=1)
-    return HttpResponse(f"<h1>{ls.name}</h1><br></br><p>{5+9}<p>")
+def index(response, id):
+    ls = ToDoList.objects.get(id=id)
+    return render(response, "main/base.html", {})
 
+def home(response):
+    return render(response, "main/home.html", {})
