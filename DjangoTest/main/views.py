@@ -10,7 +10,6 @@ def index(response, id):
     ls = ToDoList.objects.get(id=id)
 
     if response.method == "POST":
-        print(response.POST)
         # Save checkbox status
         if response.POST.get("save"):
             for item in ls.item_set.all():
@@ -20,15 +19,12 @@ def index(response, id):
                     item.complete = False
                 item.save()
 
+        # Save new items
         elif response.POST.get("newItem"):
             txt = response.POST.get("new")
 
             if len(txt) > 2:
                 ls.item_set.create(text=txt, complete=False)
-            else:
-                print("invalid")
-
-            
 
     return render(response, "main/list.html", {"ls":ls})
 
