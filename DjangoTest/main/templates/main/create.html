@@ -4,7 +4,8 @@
 
 {% block content %}
     <form method="post" action="/create/">
-        {{form.as_p}} <!-- as_p, as_ul -->
+        {% csrf_token %}
+        {{form.as_p}} <!-- as_table, as_p, as_ul -->
         <button type="submit", name="save">Create New</button>
     </form>
 
