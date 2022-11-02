@@ -9,6 +9,9 @@ from .forms import CreateNewList
 def index(response, id):
     ls = ToDoList.objects.get(id=id)
 
+    if not ls in response.user.todolist.all():
+        return render(response, "main/view.html", {})
+
     if response.method == "POST":
         # Save checkbox status
         if response.POST.get("save"):
