@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main.apps.MainConfig', # This adds dependencies from app to project
+    'register.apps.RegisterConfig', # This adds dependencies from app to project
 ]
 
 MIDDLEWARE = [
